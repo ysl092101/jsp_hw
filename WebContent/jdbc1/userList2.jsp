@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List, lecture1.jdbc1.*" %>
 <%
-List<User> list = UserDAO.findAll();
+String srchText = request.getParameter("srchText");
+if (srchText == null) srchText = "";
+List<User> list = UserDAO2.findByName(srchText);
 %>
 
 <!DOCTYPE html>
@@ -9,7 +11,9 @@ List<User> list = UserDAO.findAll();
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<style>
-		div.container { width: 600px; margin: 50px auto; }
+		div.container { width: 600px; margin: 50px auto; font-size: 10pt; }
+		input { padding: 5px; font-size: 10pt; }
+		button { margin: 10px ; padding: 0.4em 2em; }
 		thead th { background-color: #eee; }
 		table { border-collapse: collapse; width: 100%; }
 		td, th { padding: 4px; border: 1px solid lightgray; }
@@ -19,6 +23,12 @@ List<User> list = UserDAO.findAll();
 <body>
 <div class="container">
 	<h1>사용자목록</h1>
+
+	<form>
+		<label>이름</label>
+		<input type="text" name="srchText" value="<%= srchText %>" placeholder="검색조건" />
+		<button type="submit">조회</button>
+	</form>
 
 	<table class="table table-bordered table-condensed">
 		<thead>

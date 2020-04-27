@@ -17,35 +17,35 @@ Student student = (Student)session.getAttribute("student");
 	</style>
 </head>
 <body>
-	<div class="container">
-		<h1>학생등록 성공</h1>
-	
-		<table>
-			<tr>
-				<td>ID</td>
-				<td><%= student.getId() %></td>
-			</tr>
+<div class="container">
+	<h1>학생등록 성공</h1>
+
+	<table>
+		<tr>
+			<td>ID</td>
+			<td><%= student.getId() %></td>
+		</tr>
 			
-			<tr>
-				<td>학번</td>
-				<td><%= student.getStudentNumber() %></td>
-			</tr>
+		<tr>
+			<td>학번</td>
+			<td><%= student.getStudentNumber() %></td>
+		</tr>
 			
-			<tr>
-				<td>이름</td>
-				<td><%= student.getName() %></td>
-			</tr>
+		<tr>
+			<td>이름</td>
+			<td><%= student.getName() %></td>
+		</tr>
 			
-			<tr>
-				<td>학과</td>
-				<td><%= student.getDepartmentId() %></td>
-			</tr>
+		<tr>
+			<td>학과</td>
+			<td><%= student.getDepartmentId() %></td>
+		</tr>
 		  
-			<tr>
-				<td>학년</td>
-				<td><%= student.getYear() %></td>
-			</tr>
-		</table>
-	</div>
+		<tr>
+			<td>학년</td>
+			<td><%= student.getYear() %></td>
+		</tr>
+	</table>
+</div>
 </body>
 </html>

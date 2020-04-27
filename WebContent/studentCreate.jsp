@@ -57,50 +57,50 @@ if (request.getMethod().equals("POST")) {
 	</style>
 </head>
 <body>
-	<div class="container">
-	<form method="post">
-		<h1>학생 등록</h1>
+<div class="container">
+<form method="post">
+	<h1>학생 등록</h1>
 		
-		<div>
-			<label>ID</label>
-			<input type="text" class="text" name="id" value="<%= id %>" />
-		</div>
+	<div>
+		<label>ID</label>
+		<input type="text" class="text" name="id" value="<%= id %>" />
+	</div>
 		
-		<div>
-			<label>학번</label>
-			<input type="text" class="text" name="studentNumber" value="<%= studentNumber %>" />
-		</div>
+	<div>
+		<label>학번</label>
+		<input type="text" class="text" name="studentNumber" value="<%= studentNumber %>" />
+	</div>
 		
-		<div>
-			<label>이름</label>
-			<input type="text" class="text" name="name" value="<%= name %>" />
-		</div>
+	<div>
+		<label>이름</label>
+		<input type="text" class="text" name="name" value="<%= name %>" />
+	</div>
 		
-		<div>
-			<label>학과</label>
-			<select class="form-control" name="departmentId">
-				<option value="1" <%= departmentId == 1 ? "selected" : "" %>>소프트웨어공학과</option>
-				<option value="2" <%= departmentId == 2 ? "selected" : "" %>>컴퓨터공학과</option>
-				<option value="3" <%= departmentId == 3 ? "selected" : "" %>>정보통신공학과</option>
-				<option value="4" <%= departmentId == 4 ? "selected" : "" %>>글로컬IT공학과</option>
-			</select>
-		</div>
+	<div>
+		<label>학과</label>
+		<select class="form-control" name="departmentId">
+			<option value="1" <%= departmentId == 1 ? "selected" : "" %>>소프트웨어공학과</option>
+			<option value="2" <%= departmentId == 2 ? "selected" : "" %>>컴퓨터공학과</option>
+			<option value="3" <%= departmentId == 3 ? "selected" : "" %>>정보통신공학과</option>
+			<option value="4" <%= departmentId == 4 ? "selected" : "" %>>글로컬IT공학과</option>
+		</select>
+	</div>
 		
-		<div>
-			<label>학년</label>
-			<input type="text" class="text" name="year" value="<%= year %>" />
-		</div>
+	<div>
+		<label>학년</label>
+		<input type="text" class="text" name="year" value="<%= year %>" />
+	</div>
 		
-		<button type="submit" class="btn">
-			<i class="fas fa-user-plus"></i> 학생 등록
-		</button>
-	</form>
+	<button type="submit" class="btn">
+		<i class="fas fa-user-plus"></i> 학생 등록
+	</button>
+</form>
 	
 	<% if (에러메시지 != null) { %>
 		<div class="error">
 			학생등록 실패 : <%= 에러메시지 %>
 		</div>
 	<% } %>
-	</div>
+</div>
 </body>
 </html>

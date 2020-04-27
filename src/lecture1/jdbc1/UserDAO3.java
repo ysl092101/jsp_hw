@@ -35,9 +35,9 @@ public class UserDAO3 {
 		ResultSet resultSet = statement.executeQuery()) {
 			ArrayList<User> list = new ArrayList<User>();
 
-            while (resultSet.next())
-                list.add(getUserFrom(resultSet));
-            return list;
+			while (resultSet.next())
+				list.add(getUserFrom(resultSet));
+			return list;
 		}
 	}
 
@@ -52,9 +52,9 @@ public class UserDAO3 {
 			try (ResultSet resultSet = statement.executeQuery()) {
 				ArrayList<User> list = new ArrayList<User>();
 
-	            while (resultSet.next())
-	                list.add(getUserFrom(resultSet));
-	            return list;
+				while (resultSet.next())
+					list.add(getUserFrom(resultSet));
+				return list;
 			}
 		}
 	}

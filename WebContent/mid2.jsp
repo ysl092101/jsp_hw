@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>mid2</title>
 	<style>
-		form div { margin-bottom : 10px; }
+		form div { margin-bottom: 10px; }
 	</style>
 </head>
 <body>

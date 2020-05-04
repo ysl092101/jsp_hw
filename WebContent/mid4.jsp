@@ -7,7 +7,7 @@
 	<style>
 		table { border-collapse: collapse; }
 		td { width: 150px; padding: 3px; border: 1px solid gray; }
-        div.error { margin: 10px; padding: 10px 20px; background-color: #fdd; border: 1px solid #faa; }
+		div.error { width: 300px; margin: 10px; padding: 10px 20px; background-color: #fdd; border: 1px solid #faa; }
 	</style>
 </head>
 <body>
@@ -30,44 +30,42 @@ if (request.getMethod().equals("POST")) {
 
 <div class="container">
 <form method="post">
-      <h1>회원 등록</h1>
-        <label>이름</label>
-       <div>
-        <input type="text" name="text1" value="<%= text1 %>" />
-      </div>
-      <br/>
-        <label>성별</label> 
-         <div>
-         		<input type="radio" name="text2" value="남자" />남자
-         		 <br/>
-			<input type="radio" name="text2" value="여자" />여자
-		
-      </div>
- <br/>
-      <div>
-        <button type="submit">회원 등록</button>
-      </div>
-          </form>
-          
-          
-          <% if (에러메시지 != null) { %>
-		<div class="error">
-			회원등록 실패 : <%= 에러메시지 %>
-		</div>
-	<% } %>
+	<h1>회원 등록</h1>
 
- <br/>
-    <table>
-        <tr>
-          <td>이름</td>
-          <td><%= request.getParameter("text1") %></td>
-        </tr>
-        <tr>
-          <td>성별</td>
-          <td><%= request.getParameter("text2") %></td>
-        </tr>
-    </table>
+	<label>이름</label>
+	<div>
+		<input type="text" name="text1" value="<%= text1 %>" />
+	</div>
+	<br/>
+	<label>성별</label> 
+	<div>
+		<input type="radio" name="text2" value="남자" />남자
+		<br/>
+		<input type="radio" name="text2" value="여자" />여자
+	</div>
+	<br/>
+	<div>
+		<button type="submit">회원 등록</button>
+	</div>
+</form>
+          
+<% if (에러메시지 != null) { %>
+	<div class="error">
+		회원등록 실패 : <%= 에러메시지 %>
+	</div>
+<% } %>
 
-  </div>
+<br/>
+<table>
+	<tr>
+		<td>이름</td>
+		<td><%= request.getParameter("text1") %></td>
+	</tr>
+	<tr>
+		<td>성별</td>
+		<td><%= request.getParameter("text2") %></td>
+	</tr>
+</table>
+</div>
 </body>
 </html>

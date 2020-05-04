@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>mid3</title>
 	<style>
-		form div { margin-bottom : 10px; }
+		form div { margin-bottom: 10px; }
 	</style>
 </head>
 <body>
@@ -20,7 +20,7 @@ if (num == null) num = "one";
 		<input type="radio" name=num value="two" <%= "two".equals(num) ? "checked" : "" %> />two
 		<input type="radio" name=num value="three" <%= "three".equals(num) ? "checked" : "" %> />three
 	</div>
-	
+
 	<div>
 		<select name="num">
 			<option value="one" <%= "one".equals(num) ? "selected" : "" %>>one</option>
@@ -28,7 +28,7 @@ if (num == null) num = "one";
 			<option value="three" <%= "three".equals(num) ? "selected" : "" %>>three</option>
 		</select>
 	</div>
-	
+
 	<div>
 		<button type="submit">OK</button>
 	</div>

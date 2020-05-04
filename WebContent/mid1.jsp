@@ -5,8 +5,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>mid1</title>
 	<style>
-		table { border-collapse : collapse; }
-		td { width: 150px; padding : 3px; border : 1px solid gray; }
+		table { border-collapse: collapse; }
+		td { width: 150px; padding: 3px; border: 1px solid gray; }
 	</style>
 </head>
 <body>
@@ -22,34 +22,16 @@ int number = (s1 == null) ? 0 : Integer.parseInt(s1);
 	</div>
 	<br/>
 	<table>
-        <tr>
-          <td><%=number %> X 1 = <%=number*1 %></td>
-        </tr>
-        <tr>
-          <td><%=number %> X 2 = <%=number*2 %></td>
-        </tr>
-        <tr>
-          <td><%=number %> X 3 = <%=number*3 %></td>
-        </tr>
-	        <tr>
-          <td><%=number %> X 4 = <%=number*4 %></td>
-        </tr>
-                <tr>
-          <td><%=number %> X 5 = <%=number*5 %></td>
-        </tr>
-        <tr>
-          <td><%=number %> X 6 = <%=number*6 %></td>
-        </tr>
-                <tr>
-          <td><%=number %> X 7 = <%=number*7 %></td>
-        </tr>
-                <tr>
-          <td><%=number %> X 8 = <%=number*8 %></td>
-        </tr>
-                <tr>
-          <td><%=number %> X 9 = <%=number*9 %></td>
-        </tr>
-</table>
+		<tr> <td><%=number %> x 1 = <%=number*1 %></td> </tr>
+		<tr> <td><%=number %> x 2 = <%=number*2 %></td> </tr>
+		<tr> <td><%=number %> x 3 = <%=number*3 %></td> </tr>
+		<tr> <td><%=number %> x 4 = <%=number*4 %></td> </tr>
+		<tr> <td><%=number %> x 5 = <%=number*5 %></td> </tr>
+		<tr> <td><%=number %> x 6 = <%=number*6 %></td> </tr>
+		<tr> <td><%=number %> x 7 = <%=number*7 %></td> </tr>
+		<tr> <td><%=number %> x 8 = <%=number*8 %></td> </tr>
+		<tr> <td><%=number %> x 9 = <%=number*9 %></td> </tr>
+	</table>
 </form>
 
 </body>

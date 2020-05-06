@@ -10,8 +10,8 @@ List<Book> list = BookDAO.findByName(srchText);
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<style>
-		div.container { width: 600px; margin: 50px auto; font-size: 10pt; }
+	<style>		
+		div.container { width: 600px; margin: 50px auto; }
 		input { padding: 5px; font-size: 10pt; }
 		button { margin: 10px ; padding: 0.4em 2em; }
 		thead th { background-color: #eee; }

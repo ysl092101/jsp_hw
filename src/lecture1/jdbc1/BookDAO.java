@@ -10,8 +10,8 @@ import lecture1.DB;
 
 public class BookDAO {
 	public static List<Book> findAll() throws Exception {
-		String sql = "SELECT b.* "
-					+ "FROM book b";
+		String sql = "SELECT b.*, c.categoryName "
+					+ "FROM book b LEFT JOIN category c ON b.categoryId = c.id";
 
         try (Connection connection = DB.getConnection("book");
        	PreparedStatement statement = connection.prepareStatement(sql);
@@ -25,6 +25,7 @@ public class BookDAO {
        			book.setTitle(resultSet.getString("title"));
        			book.setAuthor(resultSet.getString("author"));
        			book.setCategoryId(resultSet.getInt("categoryId"));
+       			book.setCategoryName(resultSet.getString("categoryName"));
        			book.setPrice(resultSet.getInt("price"));
        			book.setPublisher(resultSet.getString("publisher"));
        			list.add(book);
@@ -32,5 +33,33 @@ public class BookDAO {
 
        		return list;
         }
+	}
+
+	public static List<Book> findByName(String name) throws Exception {
+		String sql = "SELECT b.*, c.categoryName "
+					+ "FROM book b LEFT JOIN category c ON b.categoryId = c.id  WHERE b.author LIKE ?";
+
+        try (Connection connection = DB.getConnection("book");
+       	PreparedStatement statement = connection.prepareStatement(sql)) {
+			statement.setString(1, name + "%");
+
+			try (ResultSet resultSet = statement.executeQuery()) {
+				ArrayList<Book> list = new ArrayList<Book>();
+
+				while (resultSet.next()) {
+	       			Book book = new Book();
+	       			book.setId(resultSet.getInt("id"));
+	       			book.setTitle(resultSet.getString("title"));
+	       			book.setAuthor(resultSet.getString("author"));
+	       			book.setCategoryId(resultSet.getInt("categoryId"));
+	       			book.setCategoryName(resultSet.getString("categoryName"));
+	       			book.setPrice(resultSet.getInt("price"));
+	       			book.setPublisher(resultSet.getString("publisher"));
+	       			list.add(book);
+				}
+
+				return list;
+			}
+		}
 	}
 }

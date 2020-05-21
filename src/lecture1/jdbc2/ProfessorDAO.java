@@ -13,7 +13,7 @@ public class ProfessorDAO {
 
 	private static Professor getProfessorFrom(ResultSet resultSet) throws SQLException {
 		Professor professor = new Professor();
-		professor.setId(resultSet.getInt("id"));
+		professor.setId(resultSet.getString("id"));
 		professor.setProfessorName(resultSet.getString("professorName"));
 		professor.setDepartmentId(resultSet.getInt("departmentId"));
 		professor.setDepartmentName(resultSet.getString("departmentName"));
@@ -36,32 +36,14 @@ public class ProfessorDAO {
 		}
 	}
 
-	public static Professor findByProfessorName(String professorName) throws Exception {
-		String sql = "SELECT p.*, d.departmentName "
-					+ "FROM professor p LEFT JOIN department d ON p.departmentId = d.id "
-					+ "WHERE p.professorName = ?";
-
-		try (Connection connection = DB.getConnection("student1");
-		PreparedStatement statement = connection.prepareStatement(sql)) {
-			statement.setString(1, professorName);
-
-			try (ResultSet resultSet = statement.executeQuery()) {
-				if (resultSet.next())
-					return getProfessorFrom(resultSet);
-				else
-					return null;
-            }
-        }
-    }
-
-	public static Professor findById(int id) throws Exception {
+	public static Professor findById(String id) throws Exception {
 		String sql = "SELECT p.*, d.departmentName "
 					+ "FROM professor p LEFT JOIN department d ON p.departmentId = d.id "
 					+ "WHERE p.id = ?";
 
 		try (Connection connection = DB.getConnection("student1");
 		PreparedStatement statement = connection.prepareStatement(sql)) {
-			statement.setInt(1, id);
+			statement.setString(1, id);
 
 			try (ResultSet resultSet = statement.executeQuery()) {
 				if (resultSet.next())
@@ -73,12 +55,13 @@ public class ProfessorDAO {
     }
 
     public static void insert(Professor professor) throws Exception {
-    	String sql = "INSERT professor (professorName, departmentId) VALUES (?, ?)";
+    	String sql = "INSERT professor (id, professorName, departmentId) VALUES (?, ?, ?)";
 
 		try (Connection connection = DB.getConnection("student1");
 		PreparedStatement statement = connection.prepareStatement(sql)) {
-			statement.setString(1, professor.getProfessorName());
-			statement.setInt(2, professor.getDepartmentId());
+			statement.setString(1, professor.getId());
+			statement.setString(2, professor.getProfessorName());
+			statement.setInt(3, professor.getDepartmentId());
 			statement.executeUpdate();
 		}
 	}
@@ -90,7 +73,6 @@ public class ProfessorDAO {
 		PreparedStatement statement = connection.prepareStatement(sql)) {
 			statement.setString(1, professor.getProfessorName());
 			statement.setInt(2, professor.getDepartmentId());
-			statement.setInt(3, professor.getId());
 			statement.executeUpdate();
         }
     }

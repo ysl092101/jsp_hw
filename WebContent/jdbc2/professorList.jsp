@@ -24,6 +24,7 @@ List<Professor> list = ProfessorDAO.findAll();
 <table class="table">
 	<thead>
 		<tr>
+			<th>ID</th>
 			<th>이름</th>
 			<th>학과</th>
 		</tr>
@@ -32,6 +33,7 @@ List<Professor> list = ProfessorDAO.findAll();
 	<tbody>
 	<% for (Professor professor : list) { %>
 		<tr>
+			<td><%= professor.getId() %></td>
 			<td><%= professor.getProfessorName() %></td>
 			<td><%= professor.getDepartmentName() %></td>
 		</tr>

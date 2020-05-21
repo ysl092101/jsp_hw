@@ -1,15 +1,15 @@
 package lecture1.jdbc2;
 
 public class Professor {
-	int id;
+	String id;
 	String professorName;
 	int departmentId;
 	String departmentName;
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

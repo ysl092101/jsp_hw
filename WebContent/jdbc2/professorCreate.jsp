@@ -34,6 +34,11 @@ List<Department> departments = DepartmentDAO.findAll();
 	<h1>교수 등록</h1>
 
 	<div>
+		<label>ID</label>
+		<input type="text" name="id" value="${ professor.id }" />
+	</div>
+
+	<div>
 		<label>이름</label>
 		<input type="text" name="professorName" value="${ professor.professorName }" />
 	</div>
